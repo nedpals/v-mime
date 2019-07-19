@@ -58,7 +58,7 @@ mime_db.content_type('text/html') // 'text/html; charset=utf-8'
 mime_db.content_type('text/html; charset=iso-8859-1') // 'text/html; charset=iso-8859-1'
 
 // from a full path
-mime_db.content_type(path.extname('/path/to/file.json')) // 'application/json; charset=utf-8'
+mime_db.content_type(os.ext('/path/to/file.json')) // 'application/json; charset=utf-8'
 ```
 
 ### mime.extension(type string)
