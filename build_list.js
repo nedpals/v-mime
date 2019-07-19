@@ -3,8 +3,8 @@ const { default: { get } } = require('axios');
 const file = [];
 
 get('https://cdn.jsdelivr.net/gh/jshttp/mime-db@master/db.json')
-    .then(db => {
-        return JSON.parse(db);
+    .then(response => {
+        return JSON.parse(response.data);
     })
     .then(list => {
         file.push('module mime\n\nfn load_data() map[string]MimeType {\n    mut data := map[string]MimeType{}\n');
