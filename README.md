@@ -38,9 +38,9 @@ mime_db.lookup('json')             // 'application/json'
 mime_db.lookup('.md')              // 'text/markdown'
 mime_db.lookup('file.html')        // 'text/html'
 mime_db.lookup('folder/file.js')   // 'application/javascript'
-mime_db.lookup('folder/.htaccess') // false
+mime_db.lookup('folder/.htaccess') // ''
 
-mime_db.lookup('cats') // false
+mime_db.lookup('cats') // ''
 ```
 
 ### mime.contentType(type)
