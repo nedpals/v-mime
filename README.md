@@ -29,7 +29,7 @@ fn main() {
 
 ## API
 
-### mime.lookup(path)
+### mime.lookup(path string)
 
 Lookup the content-type associated with a file.
 
@@ -43,7 +43,7 @@ mime_db.lookup('folder/.htaccess') // ''
 mime_db.lookup('cats') // ''
 ```
 
-### mime.contentType(type)
+### mime.content_type(type string)
 
 Create a full content-type header given a content-type or extension.
 When given an extension, `mime_db.lookup` is used to get the matching
@@ -52,16 +52,16 @@ content-type does not already have a `charset` parameter, `mime_db.charset`
 is used to get the default charset and add to the returned content-type.
 
 ```golang
-mime_db.contentType('markdown')  // 'text/x-markdown; charset=utf-8'
-mime_db.contentType('file.json') // 'application/json; charset=utf-8'
-mime_db.contentType('text/html') // 'text/html; charset=utf-8'
-mime_db.contentType('text/html; charset=iso-8859-1') // 'text/html; charset=iso-8859-1'
+mime_db.content_type('markdown')  // 'text/x-markdown; charset=utf-8'
+mime_db.content_type('file.json') // 'application/json; charset=utf-8'
+mime_db.content_type('text/html') // 'text/html; charset=utf-8'
+mime_db.content_type('text/html; charset=iso-8859-1') // 'text/html; charset=iso-8859-1'
 
 // from a full path
-mime_db.contentType(path.extname('/path/to/file.json')) // 'application/json; charset=utf-8'
+mime_db.content_type(path.extname('/path/to/file.json')) // 'application/json; charset=utf-8'
 ```
 
-### mime.extension(type)
+### mime.extension(type string)
 
 Get the default extension for a content-type.
 
@@ -69,7 +69,7 @@ Get the default extension for a content-type.
 mime_db.extension('application/octet-stream') // 'bin'
 ```
 
-### mime.charset(type)
+### mime.charset(type string)
 
 Lookup the implied default charset of a content-type.
 
