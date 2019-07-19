@@ -7,7 +7,7 @@ What does it do? It dentifies the MIME/data types of a file like `application/js
 V-MIME 0.1 requires [Node.JS](https://nodejs.org) for the installation.
 
 ## Installation
-1. Clone the repo. (`git clone https://github.com/nedpals/v-mime_db.git mime`)
+1. Clone the repo. (`git clone https://github.com/nedpals/v-mime.git mime`)
 2. Install JS dependencies. (`npm install`)
 3. Run the `build_list.js` script. (`node build_list.js`)
 
@@ -16,10 +16,10 @@ V-MIME 0.1 requires [Node.JS](https://nodejs.org) for the installation.
 import mime
 
 // As a workaround, alias the `MimeType` type
-type MimeType mime_db.MimeType
+type MimeType mime.MimeType
 
 fn main() {
-    mime_db := mime_db.load()
+    mime_db := mime.load()
     filepath := './app.json'
     filetype := mime_db.lookup(filepath)
 
@@ -83,7 +83,7 @@ V-MIME 0.1 for now has its own limitations due to the current state of the funct
 - Using a second language (Javascript) for fetching and generating the MIME type database.
 
 ## Contributing
-1. Fork it (<https://github.com/nedpals/v-args/fork>)
+1. Fork it (<https://github.com/nedpals/v-mime/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
