@@ -3,14 +3,6 @@ MIME library for the [V Programming Language](https://github.com/vlang/v). Inspi
 
 What does it do? It dentifies the MIME/data types of a file like `application/json`.
 
-## Prerequisites
-V-MIME 0.1 requires [Node.JS](https://nodejs.org) for the installation.
-
-## Installation
-1. Clone the repo. (`git clone https://github.com/nedpals/v-mime.git mime`)
-2. Install JS dependencies. (`npm install`)
-3. Run the `build_list.js` script. (`node build_list.js`)
-
 ## Usage
 ```golang
 import mime
@@ -76,11 +68,6 @@ Lookup the implied default charset of a content-type.
 ```golang
 mime_db.charset('text/markdown') // 'UTF-8'
 ```
-
-## Limitations
-V-MIME 0.1 for now has its own limitations due to the current state of the functionalities of the language. This includes:
-- Generating `list.v` which contains hardcoded lists of MIME types. Parsing JSON is a difficult thing to solve and eventually we will use a JSON data once the problem is solved.
-- Using a second language (Javascript) for fetching and generating the MIME type database.
 
 ## Contributing
 1. Fork it (<https://github.com/nedpals/v-mime/fork>)
