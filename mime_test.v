@@ -1,6 +1,8 @@
 import mime
 import os
 
+type MimeType mime.MimeType
+
 fn test_mime() {
     mdb := mime.load()
 
