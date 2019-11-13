@@ -1,14 +1,13 @@
 module mime
 
 import os
-import json
 
 struct Db {
 pub:
     db map[string]MimeType
 }
 
-struct MimeType {
+pub struct MimeType {
 pub:
     source string
     extensions []string
@@ -72,7 +71,7 @@ pub fn (mdb Db) lookup(path string) string {
     }
 
     for k, v in mdb.db {
-        for i := 0; i < v.extensions.len; i++ {
+        for i, x in v.extensions {
             if v.extensions[i] == extension {
                 return k
             }

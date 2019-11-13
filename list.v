@@ -1,5 +1,7 @@
 module mime
 
+type MimeType mime.MimeType
+
 fn load_data() map[string]MimeType {
     mut data := map[string]MimeType{}
     data['application/1d-interleaved-parityfec'] = MimeType{'iana',[]string,false,''}
