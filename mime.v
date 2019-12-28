@@ -1,6 +1,6 @@
 module mime
 
-import os
+import filepath
 
 struct Db {
 pub:
@@ -18,9 +18,7 @@ pub:
 fn is_mime(text string) bool {
     _text := text.split('/')
 
-    if _text.len != 2{
-        return false
-    }
+    if _text.len != 2 { return false }
 
     return true
 }
@@ -43,7 +41,7 @@ pub fn (mdb Db) content_type(text string) string {
     if mdb.db[mime].charset.len != 0 {
         _charset := mdb.charset(mime)
         
-        if _charset.len != 0 {
+        if _charset.len != 0 { 
             return mime + '; charset=${_charset.to_lower()}'
         }
     }
@@ -54,25 +52,20 @@ pub fn (mdb Db) content_type(text string) string {
 pub fn (mdb Db) extension(text string) string {
     _type := mdb.db[text.to_lower()]
 
-    if !is_mime(text) || _type.extensions.len == 0 {
-        return ''
-    }
+    if !is_mime(text) || _type.extensions.len == 0 { return '' }
 
     return _type.extensions[0]
 }
 
 pub fn (mdb Db) lookup(path string) string {
-    path_ext := os.ext('x.${path}').to_lower()
-    extension := path_ext.substr(1, path_ext.len)
+    path_ext := filepath.ext('x.${path}').to_lower()
+    extension := path_ext[1..path_ext.len]
 
-    if extension.len == 0 {
-        // panic('vex.mime: Mimetype of ${path} was not found.')
-        return ''
-    }
+    if extension.len == 0 { return '' }
 
     for k, v in mdb.db {
-        for i, x in v.extensions {
-            if v.extensions[i] == extension {
+        for x in v.extensions {
+            if x == extension {
                 return k
             }
         }
