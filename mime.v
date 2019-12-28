@@ -2,10 +2,6 @@ module mime
 
 import filepath
 
-struct Db {
-pub:
-    db map[string]MimeType
-}
 
 pub struct MimeType {
 pub:
@@ -13,6 +9,11 @@ pub:
     extensions []string
     compressible bool [skip]
     charset string [skip]
+}
+
+struct Db {
+pub:
+    db map[string]MimeType
 }
 
 fn is_mime(text string) bool {

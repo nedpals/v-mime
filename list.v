@@ -1,9 +1,8 @@
 module mime
 
-type MimeType mime.MimeType
 
 fn load_data() map[string]MimeType {
-    mut data := map[string]MimeType{}
+    mut data := map[string]MimeType
     data['application/1d-interleaved-parityfec'] = MimeType{'iana',[]string,false,''}
     data['application/3gpdash-qoe-report+xml'] = MimeType{'iana',[]string,true,''}
     data['application/3gpp-ims+xml'] = MimeType{'iana',[]string,true,''}
